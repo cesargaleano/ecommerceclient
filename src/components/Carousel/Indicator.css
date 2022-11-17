@@ -1,0 +1,17 @@
+.indicatorItem{
+    width:15px;
+    height:15px;
+    background-color: lightgrey;
+    border-radius: 50px;
+    margin-left: 5px;
+    
+   
+}
+
+.indicatorContainer{
+    display:flex;
+    justify-content: center;
+    margin:10px;
+    
+    
+}
