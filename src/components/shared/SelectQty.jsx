@@ -36,8 +36,8 @@ justify-content: space-between;
 align-items: center;
 border: solid 1px lightgrey;
 border-radius:50px;
-width:6vw;
-height:45px
+width:6rem;
+height:3rem;
 
 
 
@@ -47,8 +47,8 @@ const Quantity = styled.div`
 display:flex;
 justify-content: center;
 align-items:center;
-height:45px;
-width: 20px;
+height:3rem;
+width: 2rem;
 
 
 
@@ -59,8 +59,8 @@ display:flex;
 align-items:center;
 justify-content:center;
 background-color:lightgrey;
-height:45px;
-width: 20px;
+height:3rem;
+width: 2rem;
 cursor:pointer;
 border-radius:50px 0px 0px 50px;
 
@@ -71,8 +71,8 @@ display:flex;
 align-items:center;
 justify-content:center;
 background-color:lightgrey;
-height:45px;
-width: 20px;
+height:3rem;
+width: 2rem;
 cursor:pointer;
 border-radius:0px 50px 50px 0px;
 `;

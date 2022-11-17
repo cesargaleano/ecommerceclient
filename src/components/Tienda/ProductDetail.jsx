@@ -85,7 +85,7 @@ export const ProductDetail = () => {
         <QuantityGroup>
         <SelectQty stock={product?.stock} quantity={quantity} setQuantity={setQuantity}/>
         <Button primary onClick={handleModal}><AiOutlineShoppingCart size="1.5rem"/>AÑADIR AL CARRITO</Button>
-        <Button onClick={()=>navigate('/tienda')}>VOLVER</Button>
+        <Button  width="8rem" onClick={()=>navigate('/tienda')}>VOLVER</Button>
         
         </QuantityGroup>
         
@@ -110,23 +110,30 @@ display:flex;
 flex-direction:row;
 padding: 20px;
 
+@media (max-width: 768px){
+  flex-direction: column;
+}
+
 `;
 
 const WrapperImages = styled.div`
 display:flex;
 flex-direction:column;
+justify-content: center;
+align-items: center;
 `;
 
 const BigImage = styled.img`
-width:35vw;
-height:70vh;
-border-radius: 8px;
+width:25rem;
+height:25rem;
+border-radius: 15px;
 cursor:none;
 
 `;
 
 const MiniatureImages = styled.div`
 display:flex;
+flex-wrap:wrap;
 flex-direction:row;
 justify-content: center;
 gap:5px;
@@ -143,14 +150,24 @@ h2{
   color:var(--secondary-color);
   font-weight: bold;
 }
+p{
+  text-align: justify;
+}
 `;
 
 const QuantityGroup = styled.div`
 display:flex;
 flex-direction:row;
+flex-wrap:wrap;
 align-items: center;
-gap:10px;
+justify-content:left;
+gap:1rem;
 
+/*
+@media (max-width:1030px){
+  flex-direction:column;
+}
+*/
 `;
 
 const Image = styled.img`

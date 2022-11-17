@@ -17,6 +17,7 @@ export const Navbar = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [navState, setNavState] = useState(false);
   const [activeLogin, setActiveLogin] = useState(false);
+  const [activeShoppingCart, setActiveShoppingCart] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLogin = useSelector(state=>state.auth.success);

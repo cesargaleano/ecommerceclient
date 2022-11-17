@@ -29,7 +29,7 @@ height:9vh;
 const Input = styled.input`
 border:none;
 font-family: 'Montserrat';
-width:25vw;
+width:15rem;
 padding:10px;
 border-radius: 5px;
 border: 1px solid lightgrey;

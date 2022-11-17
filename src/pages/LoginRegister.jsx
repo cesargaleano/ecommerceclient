@@ -148,12 +148,12 @@ z-index:1;
 
 const ModalWrapper = styled.div`
  position:relative;
- width: 500px;
+ width: 30rem;
  min-height:100px;
  background-color: white;
  border-radius:5px;
 box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
-padding:20px;
+padding:1rem;
 
 `;
 
@@ -235,7 +235,7 @@ padding: 5px;
 const Label = styled.div`
 margin:0;
 padding:0;
-font-size:12px;
+font-size:1rem;
 color: var(--tertiary-color);
 display:flex;
 width:100%;

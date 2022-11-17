@@ -11,8 +11,8 @@ export const Button = styled.button`
   border: none;
   border-radius: 50px;
   text-align: center;
-  width: ${(props) => (props.width ? props.width : "18vw")};
-  height: 8vh;
+  width: ${(props) => (props.width ? props.width : "12rem")};
+  height: 3.5rem;
   background: linear-gradient(to right, var(--tertiary-color) 50%, var(--secondary-color) 50%) no-repeat left / 200%;
 transition: background-position .5s ease;
   cursor: pointer;
