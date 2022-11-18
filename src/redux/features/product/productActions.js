@@ -11,6 +11,7 @@ export const getAllProducts = createAsyncThunk(
     async () => {
       try{
         console.log('Ingresando a GetAllProducts')
+        console.log(BASE_URL);
         const data = (await axios.get(BASE_URL+"/api/product/")).data;
         console.log(data); 
         return data;
