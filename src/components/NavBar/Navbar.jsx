@@ -53,7 +53,7 @@ export const Navbar = () => {
         <li value={2} className={selectedMenu===2? "selected" : "noSelected"} onClick={handleClick}>TIENDA</li>
         <li value={3} className={selectedMenu===3? "selected" : "noSelected"} onClick={handleClick}>CONTACTENOS</li>
         <li value={4} className={selectedMenu===4? "selected" : "noSelected"} onClick={handleClick}>BLOG</li>
-        <li value={5} className={selectedMenu===5? "selected" : "noSelected"} onClick={handleClick}>EQUIPO</li>
+        
       </ul>
 
       </div>
@@ -98,8 +98,8 @@ const Nav = styled.nav`
     flex-direction:row;
     justify-content: space-around;
     align-items: center;
-    width:70%;
-    @media screen and (min-width: 288px) and (max-width: 1080px){
+    width:80%;
+    @media (max-width: 288px) {
    
     display:none;
     
@@ -108,7 +108,7 @@ const Nav = styled.nav`
     ul{
       display:flex;
       list-style-type: none;
-      gap:2rem;
+      gap:0.3rem;
       li{
       cursor:pointer;
       padding:0.5rem 1rem;
@@ -145,7 +145,7 @@ const Nav = styled.nav`
    align-items:center;
    justify-content:center;
   gap:2rem;
-   width:20%;
+   width:10%;
    
   }
 
@@ -154,8 +154,8 @@ const Nav = styled.nav`
 `;
 
 const UserImg = styled.img`
-width: 40px;
-height: 40px;
+width: 2rem;
+height: 2rem;
 border-radius:50px;
 cursor:pointer;
 `; 

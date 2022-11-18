@@ -18,8 +18,9 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers:{
-
-        clearError: state=>void(state.error = null),
+      clearError(state) {
+        state.error = null
+      },
         clearSuccess: state=>void(state.success = false),
         clearUserInfo: state=>void(state.userInfo = {})
     },

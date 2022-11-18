@@ -35,7 +35,8 @@ export const LoginRegister = ({setActiveLogin}) => {
           }),
         onSubmit: (values)=> {
             //alert(JSON.stringify(values, null, 2))
-            dispatch(postAuth(values));
+            const resp= dispatch(postAuth(values));
+            console.log(resp);
         }
     });
 
@@ -63,15 +64,19 @@ useEffect(()=>{
        
     }
     else if(error) { 
+        
         Swal.fire({
         icon: 'error',
         title: 'Usuario o Contraseña Errados',
         
       });
+      
     }
     
-    return ()=>clearError()
-
+    return ()=>{
+        console.log("limpiar error");
+        dispatch(clearError());
+    }
 },[error,success])  ;  
 
   return (
