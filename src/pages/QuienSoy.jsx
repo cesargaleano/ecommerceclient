@@ -21,8 +21,9 @@ export const QuienSoy = () => {
         Bienvenid@s, con cariño Leidy.
         </p>
       </TextWrapper>
-      <Img src={brand}>
-      </Img>
+      <div>
+      <Img src={brand} />
+      </div>
       </OurWrapper>
   )
 }
@@ -30,20 +31,27 @@ export const QuienSoy = () => {
 
 const OurWrapper= styled.div`
 display: flex;
+width:100%;
 flex-direction:row;
 justify-content:space-around;
 align-items:center;
-padding:30px;
+padding:10px;
+flex-wrap:wrap;
+
+
+
+
 
 `; 
 
 const TextWrapper= styled.div`
 display: flex;
 flex-direction:column;
+width:35rem;
 //justify-content:center;
 //align-items:center;
 
-padding:60px;
+padding:30px;
 h1{
   font-family: "Montserrat";
   font-weight:200;
@@ -57,7 +65,16 @@ p{
 `; 
 
 const Img= styled.img`
-width:45vw;
-height:90vh;
+width:30rem;
+height:30rem;
 border-radius:50%;
+
+
+
+@media (max-width:768px){
+  width:350px;
+  height:350px;
+border-radius:50%;
+}
+
 `; 

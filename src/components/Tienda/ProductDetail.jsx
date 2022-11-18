@@ -34,11 +34,11 @@ export const ProductDetail = () => {
 
     const handleModal = ()=>{
         
-        const validate= shoppingList.filter((prod,index)=>prod.product._id===product._id);
-            
+        //const validate= shoppingList.filter((prod,index)=>prod.product._id===product._id);
+        const validate= shoppingList.findIndex((prod)=>prod.product._id===product._id);   
           console.log(validate); 
         
-      if(validate.length===0){
+      if(validate<0){
         let subtotal = product.price*quantity;
         const data = [...shoppingList, {product: product, quantity: quantity, subtotal:subtotal}];
         let total = 0;
@@ -49,12 +49,22 @@ export const ProductDetail = () => {
 
         
 
-      }else 
-      Swal.fire({
-        icon: 'error',
-        title: 'Este producto ya existe en el carrito de compras',
+      }else {
+      const data = JSON.parse(JSON.stringify(shoppingList));
+      let subtotal = product.price*quantity;
+      data[validate].quantity=quantity;
+      data[validate].subtotal = subtotal;
+      let total = 0;
+        data.map(el=>total+=el.subtotal);
+        dispatch(updateShoppingCart(data));
+        setActiveModal(!activeModal);
+
+        //      Swal.fire({
+        //icon: 'error',
+        //title: 'Este producto ya existe en el carrito de compras',
         
-      });
+      //});
+    }
       
 
 
@@ -164,7 +174,7 @@ justify-content:left;
 gap:1rem;
 
 /*
-@media (max-width:1030px){
+@media (max-width:768px){
   flex-direction:column;
 }
 */

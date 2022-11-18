@@ -15,10 +15,12 @@ export const ShoppingCart = ({activeModal, setActiveModal}) => {
     
    const handleClickRemove = (index)=>{
     let newData = JSON.parse(JSON.stringify(newShoppingList));
+    setActiveModal(false);
     console.log(index);
     newData.splice(index,1);
     setNewShoppingList(newData);
     dispatch(updateShoppingCart(newData));
+
     
 
    };
