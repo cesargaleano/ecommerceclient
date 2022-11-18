@@ -199,8 +199,8 @@ const CloseIcon = styled.div`
 display:flex;
 justify-content:center;
 align-items:center;
-width:30px;
-height:30px;
+width:2rem;
+height:2rem;
 border: 1px solid grey;
 border-radius: 5px;
 cursor: pointer;
