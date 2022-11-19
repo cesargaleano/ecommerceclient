@@ -38,12 +38,12 @@ export const Navbar = () => {
 
   return (
     <Nav>
-      <div className="brand">
+      <Brand>
         <div className="logo">
           <img src={logo} alt="logo" ></img>
         </div>
 
-      </div>
+      </Brand>
 
       <div className={`links ${navState? "show" : "hide"}`}>
       
@@ -63,7 +63,7 @@ export const Navbar = () => {
                :(<CgProfile size="2em" style={{cursor:"pointer", fontWeight:"0.001"}} onClick={()=>setActiveLogin(true)}/>)
        
       }
-      <AiOutlineShoppingCart size="2rem" style={{cursor:"pointer"}}/>  
+      <AiOutlineShoppingCart size="2.5rem" style={{cursor:"pointer"}}/>  
         
       </div> 
       {activeLogin&&<LoginRegister setActiveLogin={setActiveLogin}/> }
@@ -73,33 +73,36 @@ export const Navbar = () => {
 }
 
 
+
+  
+  const Brand = styled.div`
+  width:10%;
+  display:flex;
+  justify-content:center;
+
+  .logo{
+    img{
+      width: 6.5rem;
+      height: 5rem;
+
+    }
+  }
+`
+
 const Nav = styled.nav`
   display:flex;
   flex-direction:row;
   justify-content: space-between;
-  //background-color: var(--secondary-color);
   padding:0.5rem;
   
-  .brand{
-    width:10%;
-    display:flex;
-    justify-content:center;
-
-    .logo{
-      img{
-        width: 6.5rem;
-        height: 5rem;
-
-      }
-    }
-  }
+ 
   .links{
     display:flex;
     flex-direction:row;
     justify-content: space-around;
     align-items: center;
-    width:80%;
-    @media (max-width: 288px) {
+    width:77%;
+    @media (max-width: 768px) {
    
     display:none;
     
@@ -139,13 +142,16 @@ const Nav = styled.nav`
       
     }
   }
+
+
   .sign-cart{
   display:flex;
   flex-direction:row;
    align-items:center;
-   justify-content:center;
-  gap:2rem;
-   width:10%;
+   justify-content:space-around;
+
+  
+   width:13%;
    
   }
 
@@ -154,8 +160,8 @@ const Nav = styled.nav`
 `;
 
 const UserImg = styled.img`
-width: 2rem;
-height: 2rem;
+width: 40px;
+height:40px;
 border-radius:50px;
 cursor:pointer;
 `; 

@@ -5,7 +5,7 @@ import { RenderProducts } from '../components/Tienda/RenderProducts';
 
 export const Tienda = () => {
   return (
-    <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+    <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
     
     
     <RenderProducts />
