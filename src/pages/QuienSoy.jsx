@@ -21,9 +21,9 @@ export const QuienSoy = () => {
         Bienvenid@s, con cariño Leidy.
         </p>
       </TextWrapper>
-      <div>
+      
       <Img src={brand} />
-      </div>
+      
       </OurWrapper>
   )
 }
@@ -72,9 +72,9 @@ border-radius:50%;
 
 
 @media (max-width:768px){
-  width:350px;
-  height:350px;
-border-radius:50%;
+  width:15rem;
+  height:15rem;
+
 }
 
 `; 

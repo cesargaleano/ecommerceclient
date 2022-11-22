@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import logo from '../../assets/logo.png'
-import { SearchBar } from '../SearchBar.jsx';
+import { SearchBar } from '../SearchBar/SearchBar';
 import { LoginIcon } from './LoginIcon';
 //import { ShoppingCar } from './ShoppingCar.jsx';
 import styled from 'styled-components';
@@ -10,6 +10,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { LoginRegister } from '../../pages/LoginRegister';
 import { clearSuccess, clearUserInfo } from '../../redux/features/auth/authSlice';
+import { Toggle } from '../Toggle/Toggle';
 
 const menu = ["inicio", "quiensoy", "tienda", "contactenos", "blog", "team",  ];
 
@@ -38,14 +39,14 @@ export const Navbar = () => {
 
   return (
     <Nav>
-      <Brand>
+      <Left>
         <div className="logo">
           <img src={logo} alt="logo" ></img>
         </div>
 
-      </Brand>
+      </Left>
 
-      <div className={`links ${navState? "show" : "hide"}`}>
+      <Center className={` ${navState? "show" : "hide"}`}>
       
       <ul>
         <li value={0} className={selectedMenu===0? "selected" : "noSelected"} onClick={handleClick}>INICIO</li>
@@ -56,17 +57,23 @@ export const Navbar = () => {
         
       </ul>
 
-      </div>
+      </Center>
 
-      <div className="sign-cart">
+      <Right className="sign-cart">
+       <>  
+       <SearchBar />
       { isLogin?(<UserImg src={photoUrl} onClick={handleLogout} />) 
-               :(<CgProfile size="2em" style={{cursor:"pointer", fontWeight:"0.001"}} onClick={()=>setActiveLogin(true)}/>)
+               :(<CgProfile size="2rem" style={{cursor:"pointer", fontWeight:"0.001"}} onClick={()=>setActiveLogin(true)}/>)
        
       }
-      <AiOutlineShoppingCart size="2.5rem" style={{cursor:"pointer"}}/>  
-        
-      </div> 
+      <AiOutlineShoppingCart size="2rem" style={{cursor:"pointer"}}/>  
+      </>
+  
+      </Right>
+
       {activeLogin&&<LoginRegister setActiveLogin={setActiveLogin}/> }
+
+      
     </Nav>
     
   )
@@ -75,10 +82,14 @@ export const Navbar = () => {
 
 
   
-  const Brand = styled.div`
-  width:10%;
+  const Left = styled.div`
+  flex:0.5;
   display:flex;
   justify-content:center;
+
+  @media (max-width: 900px) {
+    flex:0;
+  }
 
   .logo{
     img{
@@ -88,27 +99,18 @@ export const Navbar = () => {
     }
   }
 `
-
-const Nav = styled.nav`
-  display:flex;
-  flex-direction:row;
-  justify-content: space-between;
-  padding:0.5rem;
-  
+const Center= styled.div`
+display:flex;
+justify-content:center;
+align-items:center;
+  flex:5;
  
-  .links{
-    display:flex;
-    flex-direction:row;
-    justify-content: space-around;
-    align-items: center;
-    width:77%;
-    @media (max-width: 768px) {
-   
-    display:none;
-    
-    
+
+  @media (max-width: 900px) {
+      display:none;
   }
-    ul{
+
+  ul{
       display:flex;
       list-style-type: none;
       gap:0.3rem;
@@ -118,9 +120,7 @@ const Nav = styled.nav`
       border-radius:5px;
       transition: 0.3s ease-in-out;
 
-      
-      
-      
+           
        &:hover{
         background-color: var(--tertiary-color);
         color:white;
@@ -141,27 +141,39 @@ const Nav = styled.nav`
       }
       
     }
-  }
+  `;
 
-
-  .sign-cart{
+const Right= styled.div`
+  flex:2;
   display:flex;
   flex-direction:row;
-   align-items:center;
+  align-items:center;
    justify-content:space-around;
 
-  
-   width:13%;
-   
+   @media (max-width: 900px) {
+    flex:0;
   }
 
-  
+  `;
 
+
+const Nav = styled.nav`
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  padding:0.5rem;
+  height:6rem;
+  //position: fixed;
+
+  @media (max-width: 900px) {
+    justify-content: space-between;
+  }
+  
 `;
 
 const UserImg = styled.img`
-width: 40px;
-height:40px;
+width: 30px;
+height:30px;
 border-radius:50px;
 cursor:pointer;
 `; 

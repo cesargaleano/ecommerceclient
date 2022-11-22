@@ -13,19 +13,17 @@ export const Carousel1 = () => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection]= useState("");
   
-  const handlePrev = ()=>{
-    setDirection("prev");
-    setIndex(prev=>prev-1);
+  const handleClick = (e)=>{
+    console.log(e);
+    if(e>0) setDirection("next");
+    else setDirection("prev");
     
+    setIndex(prev=>prev+e);
+   
 
   };
 
-  const handleNext = ()=>{
-    setDirection("next");
-    setIndex(prev=>prev+1);
-    
-  };
-
+  
   
 const handleTransitionEnd = ()=>{
   console.log('Termino la transicion')
@@ -98,12 +96,12 @@ const handleTransitionEnd = ()=>{
             </Slide>
         
         </SlideShow>
-    <LeftControl>
-        <span onClick={handlePrev} ><IoIosArrowBack size="5rem" color="white" /></span>
-    </LeftControl>
-    <RightControl>
-        <span onClick={handleNext} ><IoIosArrowForward size="5rem" color="white" /></span>
-    </RightControl>
+    <Control direction ="left" onClick={()=>handleClick(-1)}>
+        <IoIosArrowBack size="5rem" color="white" />
+    </Control>
+    <Control direction="right" onClick={()=>handleClick(+1)}>
+        <IoIosArrowForward size="5rem" color="white" />
+    </Control>
 </CarouselWrapper>
 	);
 }
@@ -143,39 +141,22 @@ object-position:center;
 
 `;
 
-const RightControl =styled.div`
+
+const  Control =styled.div`
 display: flex;
 justify-content:center;
 align-items:center;
+width: 10rem;
+height: 10rem;
 background-color: transparent;
-height:100%;
 position:absolute;
 bottom:0;
-right:0;
+top:0;
+margin:auto;
+border-radius:50%;
+left: ${props => props.direction === "left" && "10px" };
+right: ${props => props.direction === "right" && "10px" };
 
-span{
-  cursor: pointer;
-}
-
-&:hover{
-  background-color: rgba(0,0,0,0.5);
-}
-
-`;
-
-const LeftControl =styled.div`
-display: flex;
-justify-content:center;
-align-items:center;
-background-color: transparent;
-height:100%;
-position:absolute;
-bottom:0;
-left:0;
-
-span{
-  cursor: pointer;
-}
 
 &:hover{
   background-color: rgba(0,0,0,0.5);

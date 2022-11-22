@@ -9,7 +9,8 @@
 --primary-color: #FFD4D3;
 --secondary-color: #A6F1F0;
 --tertiary-color: #FF9FCF;
---font-family: "Montserrat"
+--font-family: "Montserrat";
+
 
 }
 
@@ -18,7 +19,9 @@ html{
   
 }
 
-*{
+*,
+*::after,
+*::before{
   margin: 0;
   padding:0;
   box-sizing: border-box;
@@ -33,10 +36,23 @@ body {
    
 }
 
+img {
+  vertical-align: top;
+  width:100%;
+}
+
+ul{
+  list-style: none;
+}
+
+input{
+  outline: 0 none;
+}
+
 
 @media (max-width: 1400px) {
   html {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 

@@ -6,7 +6,9 @@ export const Footer = () => {
   return (
     
     <FooterWrapper>
-        <FooterBrand src={logo} />
+        <FooterColumn>
+            <FooterBrand src={logo} />
+        </FooterColumn>
         <FooterColumn>
         <h4>CONOCENOS</h4>
             <ul>
@@ -41,12 +43,8 @@ export const Footer = () => {
 
 const FooterWrapper = styled.footer`
 display:flex;
-flex-direction:row;
-justify-content: space-around;
-flex-wrap:wrap;
 background-color: var(--secondary-color);
-width:100%;
-padding: 2rem;
+padding: 2rem 1rem;
 margin-top:auto;
 
 @media (max-width: 768px){
@@ -57,6 +55,7 @@ margin-top:auto;
 
     ul{
         text-align: center;
+        justify-content: space-between
     }
 
 }
@@ -65,13 +64,15 @@ margin-top:auto;
 
 const FooterBrand = styled.img`
 width: 10rem;
-height: 8rem;
+height: 5rem;
+flex:1;
 
 
 
 `;
 
 const FooterColumn = styled.div`
+flex:1;
 display:flex;
 flex-direction:column;
 p{
