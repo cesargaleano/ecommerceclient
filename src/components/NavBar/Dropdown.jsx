@@ -23,7 +23,7 @@ export const Dropdown = ({menu}) => {
             {
                 MENU_ITEMS.map((item, index)=>(
                     <ListItem key={index}>
-                    <Link  to={item.url} style={{textDecoration:"none", color:"white"}}>
+                    <Link  to={item.url} style={{textDecoration:"none", color:"white"}} onClick={handleClick}>
                          
                          {item.title.toUpperCase()}
                     
@@ -44,9 +44,9 @@ export const Dropdown = ({menu}) => {
 const UList = styled.ul`
 display: ${props=>props.click? "block" : "none"};
 
-width:200px;
+width:180px;
 position: absolute;
-top:40px;
+top:55px;
 right:0px;
 text-align:left;
 padding:5px;
