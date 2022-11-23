@@ -45,6 +45,10 @@ ul{
   list-style: none;
 }
 
+li{
+  text-decoration: none;
+}
+
 input{
   outline: 0 none;
 }

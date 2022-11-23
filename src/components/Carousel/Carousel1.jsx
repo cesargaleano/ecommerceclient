@@ -88,13 +88,8 @@ const handleTransitionEnd = ()=>{
             <Slide >
             <Img src={IMAGES[2].img}/>
             </Slide>
-            <Slide >
-            <Img src={IMAGES[3].img}/>
-            </Slide>
-            <Slide >
-            <Img src={IMAGES[4].img}/>
-            </Slide>
-        
+           
+           
         </SlideShow>
     <Control direction ="left" onClick={()=>handleClick(-1)}>
         <IoIosArrowBack size="5rem" color="white" />
@@ -121,9 +116,12 @@ flex-shrink:0;
 const SlideShow = styled.div`
 display:flex;
 width:100%;
-height:500px;
+height:70vh;
 transition: 750ms ease-in-out all;
 
+@media (max-width:768px){
+  height:40vh;
+}
 
 `;
 

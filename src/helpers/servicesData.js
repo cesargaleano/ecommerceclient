@@ -1,17 +1,11 @@
-import img1 from '../assets/components/services/tienda.jpg';
-import img2 from '../assets/components/services/papeleria.jpg';
-import img3 from '../assets/components/services/clases.jpg';
-import img4 from '../assets/components/services/mantenimiento.jpg';
-import img5 from '../assets/components/services/archivos.jpg';
-//import img6 from '../assets/components/services/tienda.jpg';
-//import img7 from '../assets/components/services/tienda.jpg';
+
 
 export const SERVICES = [
-    {title:'tienda', subtitle:'subtitle1', img:img1},
-    {title:'papeleria', subtitle:'subtitle2', img:img2},
-    {title:'clases', subtitle:'subtitle3', img:img3},
-    {title:'mantenimiento', subtitle:'subtitle3', img:img4},
-    {title:'archivos', subtitle:'subtitle3', img:img5},
+    {title:'tienda', subtitle:'subtitle1', img:"https://sfo3.digitaloceanspaces.com/digitalecommerce/Categories/iconos%20instagram-02.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO008UL3AKQLFT7J8Y7D%2F20221123%2Fsfo3%2Fs3%2Faws4_request&X-Amz-Date=20221123T014222Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ccfa99a586f90ab1ffb6bf386f043fbca999404dd4bb9a203eb32f2e56a83153"},
+    {title:'papeleria', subtitle:'subtitle2', img:"https://sfo3.digitaloceanspaces.com/digitalecommerce/Categories/iconos%20instagram-08.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO008UL3AKQLFT7J8Y7D%2F20221123%2Fsfo3%2Fs3%2Faws4_request&X-Amz-Date=20221123T014222Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=116d2f9680a15539445b4b693aab6f0dd3b8c49b4c6aeab16cddc16005ccb086"},
+    {title:'aula Silhouette', subtitle:'subtitle3', img:"https://sfo3.digitaloceanspaces.com/digitalecommerce/Categories/iconos%20instagram-03.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO008UL3AKQLFT7J8Y7D%2F20221123%2Fsfo3%2Fs3%2Faws4_request&X-Amz-Date=20221123T014222Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=853cd1e2aaa917b56c00c4002cf296b6fd19aef58a3be06664cd1b8b0abf6e04"},
+    {title:'mantenimiento', subtitle:'subtitle3', img:"https://sfo3.digitaloceanspaces.com/digitalecommerce/Categories/iconos%20instagram-14.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO008UL3AKQLFT7J8Y7D%2F20221123%2Fsfo3%2Fs3%2Faws4_request&X-Amz-Date=20221123T014222Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=91045d0e1f6ff849482c043cbeb25fac2f840387a50df4752b3e5b45609d1408"},
+    {title:'archivos', subtitle:'subtitle3', img:"https://sfo3.digitaloceanspaces.com/digitalecommerce/Categories/iconos%20instagram-09.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO008UL3AKQLFT7J8Y7D%2F20221123%2Fsfo3%2Fs3%2Faws4_request&X-Amz-Date=20221123T014222Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1300bad37db0bff20b1ba2539d9eeb29e8a71c596d2e9e2c5b886fb8cd0f6ad2"},
    
     
 ];

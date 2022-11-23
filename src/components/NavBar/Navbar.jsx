@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import logo from '../../assets/logo.png'
 import { SearchBar } from '../SearchBar/SearchBar';
-import { LoginIcon } from './LoginIcon';
 //import { ShoppingCar } from './ShoppingCar.jsx';
 import styled from 'styled-components';
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -11,22 +10,30 @@ import { CgProfile } from "react-icons/cg";
 import { LoginRegister } from '../../pages/LoginRegister';
 import { clearSuccess, clearUserInfo } from '../../redux/features/auth/authSlice';
 import { Toggle } from '../Toggle/Toggle';
-
+import { Dropdown } from './Dropdown';
+import { GiHamburgerMenu } from "react-icons/gi";
 const menu = ["inicio", "quiensoy", "tienda", "contactenos", "blog", "team",  ];
 
 export const Navbar = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [navState, setNavState] = useState(false);
   const [activeLogin, setActiveLogin] = useState(false);
-  const [activeShoppingCart, setActiveShoppingCart] = useState(false)
+  const [activeShoppingCart, setActiveShoppingCart] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(false);
+  const [menuClick, setMenuClick] = useState(); 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLogin = useSelector(state=>state.auth.success);
   const {id, photoUrl, isAdmin} = useSelector(state=>state.auth.authInfo);
   
+  const handleClickHamb = ()=>{
+    setMenuClick(!menuClick);
+  };
+
+
   const handleClick = (e)=>{
-    console.log(e.target.value);
     
+    console.log(e.target.value);
     setSelectedMenu(e.target.value);
     navigate(`/${menu[e.target.value]}`);
 
@@ -37,25 +44,29 @@ export const Navbar = () => {
     dispatch(clearUserInfo());
   };
 
+  
+
   return (
     <Nav>
       <Left>
+       
         <div className="logo">
           <img src={logo} alt="logo" ></img>
         </div>
+       
 
       </Left>
 
       <Center className={` ${navState? "show" : "hide"}`}>
       
-      <ul>
+      <MenuList >
         <li value={0} className={selectedMenu===0? "selected" : "noSelected"} onClick={handleClick}>INICIO</li>
         <li value={1} className={selectedMenu===1? "selected" : "noSelected"} onClick={handleClick}>QUIEN SOY</li>
         <li value={2} className={selectedMenu===2? "selected" : "noSelected"} onClick={handleClick}>TIENDA</li>
         <li value={3} className={selectedMenu===3? "selected" : "noSelected"} onClick={handleClick}>CONTACTENOS</li>
         <li value={4} className={selectedMenu===4? "selected" : "noSelected"} onClick={handleClick}>BLOG</li>
         
-      </ul>
+      </MenuList>
 
       </Center>
 
@@ -67,9 +78,15 @@ export const Navbar = () => {
        
       }
       <AiOutlineShoppingCart size="2rem" style={{cursor:"pointer"}}/>  
+      
+      
       </>
+      
   
       </Right>
+      <DropdownWrapper activeDropdown={activeDropdown}>
+      <Dropdown />
+      </DropdownWrapper> 
 
       {activeLogin&&<LoginRegister setActiveLogin={setActiveLogin}/> }
 
@@ -86,6 +103,7 @@ export const Navbar = () => {
   flex:0.5;
   display:flex;
   justify-content:center;
+  align-items: center;
 
   @media (max-width: 900px) {
     flex:0;
@@ -151,7 +169,7 @@ const Right= styled.div`
    justify-content:space-around;
 
    @media (max-width: 900px) {
-    flex:0;
+    display:none;
   }
 
   `;
@@ -179,5 +197,33 @@ cursor:pointer;
 `; 
 
 
+const WrapperHamb = styled.div`
 
+`;
   
+const Button= styled.button`
+cursor: pointer;
+padding: 0.5rem;
+`;
+
+const MenuList= styled.ul`
+
+@media (max-width: 900px) {
+    display:flex;
+    flex-direction:column;
+  }
+  
+
+`;
+
+
+const DropdownWrapper = styled.div`
+
+align-items:center;
+justify-content:center;
+
+@media (min-width:900px){
+  display:none;
+}
+
+`; 

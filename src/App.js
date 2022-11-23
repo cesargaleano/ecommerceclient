@@ -21,6 +21,7 @@ function App() {
     <GralWrapper>
     <Navbar />
     <Routes>
+    <Route path="/" element={<Inicio />} />
     <Route path="/inicio" element={<Inicio />} />
     <Route path="/quiensoy" element={<QuienSoy />} />
     <Route path="/tienda" element={<Tienda />} />
