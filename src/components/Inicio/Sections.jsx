@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {SERVICES} from '../../helpers/servicesData';
 
 export const Sections = () => {
+    console.log(JSON.stringify(SERVICES));
   return (
     <SectionsWrapper>
         <Section>   

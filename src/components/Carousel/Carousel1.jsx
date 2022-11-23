@@ -116,7 +116,7 @@ flex-shrink:0;
 const SlideShow = styled.div`
 display:flex;
 width:100%;
-height:70vh;
+height:80vh;
 transition: 750ms ease-in-out all;
 
 @media (max-width:768px){
@@ -136,6 +136,7 @@ width:100%;
 height:100%;
 object-fit:cover;
 object-position:center;
+
 
 `;
 
