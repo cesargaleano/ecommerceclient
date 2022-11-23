@@ -8,6 +8,7 @@ import { IoIosArrowBack, IoIosArrowForward  } from "react-icons/io";
 
 export const Carousel1 = () => {
   let slideshow = useRef(null);
+  const winWidth = window.innerWidth;
   
 
   const [index, setIndex] = useState(0);
@@ -95,7 +96,7 @@ const handleTransitionEnd = ()=>{
         <IoIosArrowBack size="5rem" color="white" />
     </Control>
     <Control direction="right" onClick={()=>handleClick(+1)}>
-        <IoIosArrowForward size="5rem" color="white" />
+        <IoIosArrowForward size={winWidth>768?"5rem": "2rem"} color="white" />
     </Control>
 </CarouselWrapper>
 	);
@@ -156,9 +157,13 @@ border-radius:50%;
 left: ${props => props.direction === "left" && "10px" };
 right: ${props => props.direction === "right" && "10px" };
 
-
 &:hover{
   background-color: rgba(0,0,0,0.5);
+}
+
+@media (max-width:768px){
+  width: 5rem;
+height: 5rem;
 }
 
 `;
