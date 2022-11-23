@@ -93,7 +93,7 @@ const handleTransitionEnd = ()=>{
            
         </SlideShow>
     <Control direction ="left" onClick={()=>handleClick(-1)}>
-        <IoIosArrowBack size="5rem" color="white" />
+        <IoIosArrowBack size={winWidth>768?"5rem": "2rem"} color="white" />
     </Control>
     <Control direction="right" onClick={()=>handleClick(+1)}>
         <IoIosArrowForward size={winWidth>768?"5rem": "2rem"} color="white" />
