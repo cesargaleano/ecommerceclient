@@ -4,7 +4,7 @@ import '../styles/pages/inicio.css';
 
 import {IMAGES} from '../helpers/CarruselData';
 import { getAllProducts } from '../redux/features/product/productActions.js';
-import { Carousel1 } from '../components/Carousel/Carousel1';
+import { Carousel } from '../components/Carousel/Carousel';
 import { Sections } from '../components/Inicio/Sections';
 
 
@@ -19,7 +19,7 @@ export const Inicio = () => {
   return (
     
      <>           
- {<Carousel1 />
+ {<Carousel />
  }
  <Sections />
  </>

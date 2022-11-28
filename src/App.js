@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Outlet} from 'react-router-dom';
 import './App.css';
 import { Footer } from './components/Footer/Footer';
 import { Navbar } from './components/NavBar/Navbar.jsx';
@@ -12,27 +12,41 @@ import { Tienda } from './pages/Tienda';
 import styled from 'styled-components';
 import { LoginRegister } from './pages/LoginRegister';
 
+const Layout = ()=>{
+  return(
+    <>
+    <Navbar />
+    <Outlet />
+    <Footer />
+    </>
+  )
+}
 
 function App() {
+
+  
+
   return (
     
     
     <BrowserRouter>
     <GralWrapper>
-    <Navbar />
+    
     <Routes>
-    <Route path="/" element={<Inicio />} />
+      <Route path="/" element={<Layout />}>
     <Route path="/inicio" element={<Inicio />} />
     <Route path="/quiensoy" element={<QuienSoy />} />
     <Route path="/tienda" element={<Tienda />} />
     <Route path="/tienda/:id" element={<ProductDetail />} />
     <Route path="/contactenos" element={<ContactUs />} />
+    </Route> 
     
     
     </Routes>
-    <Footer />
     
-    </GralWrapper>
+    
+  </GralWrapper>
+  
     </BrowserRouter>
     
    

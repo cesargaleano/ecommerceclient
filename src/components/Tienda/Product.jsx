@@ -25,7 +25,7 @@ return (
         <ProductImage src={images[0]} alt="product-img"/>  
         <ProductLabel >{name}</ProductLabel>
         <label>${convertToCurrency(price)}</label>
-        <Button primary width="14vw">VER DETALLE</Button>
+        <Button primary width="10rem">VER DETALLE</Button>
         
         </Wrapper>
   )
