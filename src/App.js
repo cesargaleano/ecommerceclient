@@ -33,7 +33,7 @@ function App() {
     <GralWrapper>
     
     <Routes>
-      <Route path="/" element={<Layout />}>
+    <Route path="/" element={<Layout />}>
     <Route path="/inicio" element={<Inicio />} />
     <Route path="/quiensoy" element={<QuienSoy />} />
     <Route path="/tienda" element={<Tienda />} />

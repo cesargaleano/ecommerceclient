@@ -1,7 +1,7 @@
 export const MENU_ITEMS = [
     {
       title: 'Inicio',
-      url: '/',
+      url: '/inicio',
       classname:'dropdown'
     },
     {
