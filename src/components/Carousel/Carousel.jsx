@@ -106,7 +106,7 @@ height:80vh;
 transition: 750ms ease-in-out all;
 
 @media (max-width:768px){
-  height:40vh;
+  height:35vh;
 }
 
 `;
